@@ -1,12 +1,13 @@
 import {Component} from '@angular/core'
-
-declare var require:any
+import {ROUTER_DIRECTIVES, RouterConfig, Route} from '@angular/router'
+import {HTTP_PROVIDERS} from '@angular/http'
 
 @Component({
-  selector: 'app',
-  template: require('./app.component.html'),
-  styles: [require('./app.component.css')]
+    selector: 'app',
+    directives: [ROUTER_DIRECTIVES],
+    template: '<router-outlet></router-outlet>',
+    providers: [HTTP_PROVIDERS]
 })
-export class AppComponent { 
-    title="Hello Webpack";
+export class AppComponent {
+    title = "Hello Webpack";
 }
