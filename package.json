@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --inline --progress --port 4300",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "e2e": "protractor config/protractor.conf.js",
+    "e2e": "protractor config/protractor.conf.js --baseUrl http://localhost:4300",
     "postinstall": "typings install"
   },
   "license": "MIT",
