@@ -6,6 +6,7 @@
     "start": "webpack-dev-server --inline --progress --port 4300",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "e2e": "protractor config/protractor.conf.js",
     "postinstall": "typings install"
   },
   "license": "MIT",
@@ -32,6 +33,7 @@
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
     "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.5.0",
     "karma": "^0.13.22",
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",

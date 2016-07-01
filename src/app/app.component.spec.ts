@@ -1,10 +1,8 @@
-import {
-    it,
-    inject,
-    describe,
-    beforeEachProviders,
-    expect
-} from '@angular/core/testing';
+/// <reference path="../../typings/index.d.ts" />
+
+import {beforeEachProviders, inject} from '@angular/core/testing';
+
+
 import { AppComponent } from './app.component';
 describe('App', () => {
     beforeEachProviders(() => [
