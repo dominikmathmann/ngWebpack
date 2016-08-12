@@ -1,14 +1,17 @@
 import {Component} from '@angular/core'
-import { ROUTER_DIRECTIVES } from '@angular/router'
+import {HelloService} from './service/hello.service'
 
 declare var require:any
 
 @Component({
-  selector: 'app',
-  template: require('./home.component.html'),
-  styles: [require('./home.component.css')],
-  directives: [ROUTER_DIRECTIVES]
+    template: require('./home.component.html'),
+    styles: [require('./home.component.css')],
+    providers: [HelloService]
 })
-export class HomeComponent { 
-    title="Hello Webpack";
+export class HomeComponent {
+    title:string;
+    
+    constructor(service: HelloService){
+        this.title = service.getHello();
+    }
 }

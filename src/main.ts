@@ -2,20 +2,17 @@ import {LocationStrategy, Location, HashLocationStrategy } from '@angular/common
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { BrowserModule}  from '@angular/platform-browser';
-import { enableProdMode, provide, NgModule} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { enableProdMode, provide, NgModule, ANALYZE_FOR_ENTRY_COMPONENTS} from '@angular/core';
 
 @NgModule({
-    imports: [BrowserModule],
-    providers: [APP_ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent]
+    imports: [ BrowserModule ],
+  providers: [APP_ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
 })
-class MyAppModule { }
+class MyAppModule {}
 
-declare var process: any
+// JIT compile long form
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-if (process.env.ENV === 'production') {
-    enableProdMode();
-}
 platformBrowserDynamic().bootstrapModule(MyAppModule);

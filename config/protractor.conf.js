@@ -2,7 +2,7 @@ exports.config = {
   baseUrl: 'http://localhost:4300/',
 
   specs: [
-    '../src/**/*.spec.e2e.ts'
+    '../test/integration/**/*.e2espec.ts'
   ],
   exclude: [],
 
